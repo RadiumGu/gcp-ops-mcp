@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gcp-mcp": {
+      "command": "node",
+      "args": ["/Users/glei/genai/gcp-mcp/bin.js"],
+      "env": {
+        "NODE_PATH": "/Users/glei/genai/gcp-mcp/node_modules"
+      }
+    }
+  }
+}
