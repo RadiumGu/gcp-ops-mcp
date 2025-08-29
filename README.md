@@ -2,7 +2,6 @@
 
 A Model Context Protocol (MCP) server that enables AI assistants like Claude to interact with your Google Cloud Platform environment. This allows for natural language querying and management of your GCP resources during conversations.
 
-![GCP MCP Demo](images/claude.png)
 
 ## Features
 
@@ -16,15 +15,15 @@ A Model Context Protocol (MCP) server that enables AI assistants like Claude to 
 ## Prerequisites
 
 * Node.js
-* Claude Desktop/Cursor/Windsurf
+* Amazon Q CLI/Claude Desktop/Cursor/Windsurf
 * GCP credentials configured locally (application default credentials)
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-# Repository cloned locally
-cd gcp-mcp
+git clone https://github.com/RadiumGu/gcp-ops-mcp.git
+cd gcp-ops-mcp
 ```
 
 2. Install dependencies:
@@ -32,7 +31,32 @@ cd gcp-mcp
 npm install
 ```
 
+3. Build the project:
+```bash
+npm run build
+```
+
 ## Configuration
+
+### Amazon Q CLI
+
+Add the following configuration to your Q CLI MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "gcp-mcp": {
+      "command": "node",
+      "args": ["/path/to/gcp-ops-mcp/bin.js"],
+      "env": {
+        "NODE_PATH": "/path/to/gcp-ops-mcp/node_modules"
+      }
+    }
+  }
+}
+```
+
+Replace `/path/to/gcp-ops-mcp` with the actual path to your project directory.
 
 ### Claude Desktop
 
